@@ -27,6 +27,7 @@ exports.resize = async (req, res, next) => {
   const extension = req.file.mimetype.split('/')[1];
   const encoded = req.file.buffer.toString('base64');
   req.body.photo = `${encoded}`;
+  console.log(encoded);
 
   //resize
   const photo = await jimp.read(req.file.buffer);
