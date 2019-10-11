@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const Image = mongoose.model('Image');
 const multer = require('multer');
 const jimp = require('jimp');
@@ -30,6 +31,6 @@ exports.resize = async (req, res, next) => {
   //resize
   const photo = await jimp.read(req.file.buffer);
   await photo.resize(800, jimp.AUTO);
-  const photo = await jimp.read(req.file.buffer);
+  await jimp.read(req.file.buffer);
   // await photo.write(`./public/uploads/${req.body.photo}`);
 };
