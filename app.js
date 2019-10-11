@@ -20,10 +20,6 @@ app.use(cookieParser());
 
 app.use('/', Router);
 
-app.get('/', (req, res) => {
-  res.send('I am a little express app. I can help you to make money');
-});
-
 app.use((req, res, next) => {
   next(createError(404));
 });
